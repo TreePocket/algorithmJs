@@ -6,7 +6,6 @@
  * @Description: In User Settings Edit
  * @FilePath: /algorithmJs/queue/queue.js
  */
-//队列
 module.exports = class Queue {
   constructor() {
     this.count = 0;
