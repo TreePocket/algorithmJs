@@ -1,0 +1,56 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-06 09:15:20
+ * @LastEditTime: 2020-09-06 09:20:49
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithmJs/shengbei.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>圣杯布局</title>
+</head>
+<style>
+  .fl {
+    float: left;
+  }
+
+  .container {
+    padding-left: 200px;
+    padding-right: 150px;
+  }
+
+  .middle {
+    width: 100%;
+    background: #ddd;
+  }
+
+  .left {
+    width: 200px;
+    background: #bcbcbc;
+    margin-left: -100%;
+    position: relative;
+    left: -200px;
+  }
+
+  .right {
+    width: 150px;
+    background: #bcbcbc;
+    margin-right: -150px;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="middle fl">中</div>
+    <div class="left fl">左<p>123</p>
+    </div>
+    <div class="right fl">右</div>
+  </div>
+</body>
+
+</html>
