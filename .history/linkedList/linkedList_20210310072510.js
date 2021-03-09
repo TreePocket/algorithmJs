@@ -27,7 +27,7 @@ module.exports = class LinkedList {
     this.count++;
   }
 
-  //根据位置从链表中移除元素
+  //从链表中移除元素
   removeAt(index) {
     //检查越界值
     if (index >= 0 && index < this.count) {
@@ -74,59 +74,8 @@ module.exports = class LinkedList {
         node.next = current;
         this.head = node;
       } else {
-        const previous = this.getElementAt(index - 1);
-        const current = previous.next;
-        node.next = current;
-        previous.next = node;
+
       }
-      this.count++;
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  //返回一个元素在链表中的位置
-  indexOf(element) {
-    let current = this.head;
-    for (let i = 0; i < this.count && current != null; i++) {
-      if (this.equalsFn(element, current.element)) {
-        return i;
-      }
-      current = current.next;
-    }
-    return -1;
-  }
-
-  //根据元素值在链表中移除元素
-  remove(element) {
-    const index = this.indexOf(element);
-    return this.removeAt(index);
-  }
-
-  size() {
-    return this.count;
-  }
-
-  isEmpty() {
-    return this.size() === 0;
-  }
-
-  getHead() {
-    return this.head;
-  }
-
-  toString() {
-    if (this.head == null) {
-      return '';
-    } else {
-      let objStr = `${this.head.element}`;
-      let current = this.head.next;
-      for (let i = 1; i < this.count && current != null; i++) {
-        objStr = `${objStr},${current.element}`;
-        current = current.next;
-      }
-      return objStr;
     }
   }
 

@@ -126,7 +126,6 @@ module.exports = class LinkedList {
         objStr = `${objStr},${current.element}`;
         current = current.next;
       }
-      return objStr;
     }
   }
 

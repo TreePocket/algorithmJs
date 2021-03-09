@@ -109,25 +109,7 @@ module.exports = class LinkedList {
   }
 
   isEmpty() {
-    return this.size() === 0;
-  }
-
-  getHead() {
-    return this.head;
-  }
-
-  toString() {
-    if (this.head == null) {
-      return '';
-    } else {
-      let objStr = `${this.head.element}`;
-      let current = this.head.next;
-      for (let i = 1; i < this.count && current != null; i++) {
-        objStr = `${objStr},${current.element}`;
-        current = current.next;
-      }
-      return objStr;
-    }
+    return this.size() == 0;
   }
 
 

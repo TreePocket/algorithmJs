@@ -116,19 +116,5 @@ module.exports = class LinkedList {
     return this.head;
   }
 
-  toString() {
-    if (this.head == null) {
-      return '';
-    } else {
-      let objStr = `${this.head.element}`;
-      let current = this.head.next;
-      for (let i = 1; i < this.count && current != null; i++) {
-        objStr = `${objStr},${current.element}`;
-        current = current.next;
-      }
-      return objStr;
-    }
-  }
-
 
 }
