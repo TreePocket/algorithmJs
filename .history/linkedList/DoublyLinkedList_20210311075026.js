@@ -68,9 +68,6 @@ class DoublyLinkedList extends LinkedList {
         previous.next = current.next;
         current.next.prev = previous;
       }
-      this.count--;
-      return current.element;
     }
-    return undefined;
   }
 }

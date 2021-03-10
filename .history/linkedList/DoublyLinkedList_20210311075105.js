@@ -71,6 +71,6 @@ class DoublyLinkedList extends LinkedList {
       this.count--;
       return current.element;
     }
-    return undefined;
+    return undefined
   }
 }
