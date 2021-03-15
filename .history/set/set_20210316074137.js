@@ -76,31 +76,5 @@ module.exports = class Set {
     return intersectionSet;
   }
 
-  //差集
-  difference(otherSet) {
-    const differenceSet = new Set();
-    this.values().forEach(item => {
-      if (!otherSet.has(item)) {
-        differenceSet.add(value);
-      }
-    })
-    return differenceSet;
-  }
-
-  //子集
-  isSubsetOf(otherSet) {
-    if (this.size() > otherSet.size()) {
-      return false;
-    }
-    let isSubset = true;
-    this.values().every(value => {
-      if (!otherSet.has(value)) {
-        isSubset = false;
-        return false
-      }
-      return true;
-    })
-    return isSubset;
-  }
 
 }

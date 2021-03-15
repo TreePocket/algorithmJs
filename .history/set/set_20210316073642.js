@@ -60,14 +60,14 @@ module.exports = class Set {
   union(otherSet) {
     const unionSet = new Set();
     this.values().forEach(value => unionSet.add(value));
-    otherSet.values().forEach(value => unionSet.add(value));
+    otherSet.values.forEach(value => unionSet.add(value));
     return unionSet;
   }
 
   //交集
   intersection(otherSet) {
     const intersectionSet = new Set();
-    const values = this.size() > otherSet.size() ? otherSet.values() : this.values();
+    const values = this.size() > otherSet.size() ? otherSet.values : this.values;
     for (let i = 0; i < values.length; i++) {
       if (otherSet.has(values[i])) {
         intersectionSet.add(values[i]);
@@ -76,31 +76,5 @@ module.exports = class Set {
     return intersectionSet;
   }
 
-  //差集
-  difference(otherSet) {
-    const differenceSet = new Set();
-    this.values().forEach(item => {
-      if (!otherSet.has(item)) {
-        differenceSet.add(value);
-      }
-    })
-    return differenceSet;
-  }
-
-  //子集
-  isSubsetOf(otherSet) {
-    if (this.size() > otherSet.size()) {
-      return false;
-    }
-    let isSubset = true;
-    this.values().every(value => {
-      if (!otherSet.has(value)) {
-        isSubset = false;
-        return false
-      }
-      return true;
-    })
-    return isSubset;
-  }
 
 }
