@@ -45,47 +45,4 @@ module.exports = class Dictionary {
     }
     return undefined;
   }
-  //返回所有的valuePairs对象
-  keyValues() {
-    return Object.values(this.table);
-  }
-  //返回所有键名
-  keys() {
-    return this.keyValues().map(valuePair => valuePair.key);
-  }
-  //返回所有值构成的数组
-  values() {
-    return this.keyValues().map(valuePair => valuePair.value);
-  }
-  //迭代
-  forEach(callbackFn) {
-    const valuePairs = this.keyValues;
-    for (let i = 0; i < valuePairs.length; i++) {
-      const result = callbackFn(valuePairs[i].key, valuePairs[i].value);
-      if (result === false) {
-        break;
-      }
-    }
-  }
-
-  size() {
-    return Object.keys(this.table).length;
-  }
-  isEmpty() {
-    return this.size() === 0;
-  }
-  clear() {
-    this.table = {};
-  }
-  toString() {
-    if (this.isEmpty()) {
-      return '';
-    }
-    const valuePairs = this.keyValues();
-    let objString = `${valuePairs[0].toString()}`;
-    for (let i = 1; i < valuePairs.length; i++) {
-      objString = `${objString},${valuePairs[i].toString()}`;
-    }
-    return objString;
-  }
 }
