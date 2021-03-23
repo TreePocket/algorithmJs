@@ -12,4 +12,3 @@ hash.put('Tyrion', 'Tyrion@email.com');
 console.log(hash.hashCode('Gandaf') + ' Gandalf');
 console.log(hash.hashCode('John') + ' John');
 console.log(hash.get("Gandaf"));
-console.log(hash.toString());

@@ -1,6 +1,7 @@
+const { defaultToString } = require("../utils");
 const ValuePair = require("./util");
 
-class HashTable {
+module.exports = class HashTable {
   constructor(toStrFn = defaultToString) {
     this.toStrFn = toStrFn;
     this.table = {};
@@ -13,7 +14,7 @@ class HashTable {
     }
     const tableKey = this.toStrFn(key);
     let hash = 0;
-    for (let i = 0; i < this.tableKey.length; i++) {
+    for (let i = 0; i < tableKey.length; i++) {
       hash += tableKey.charCodeAt(i);
     }
     return hash % 37;
