@@ -44,15 +44,11 @@ module.exports = class HashTableSeparateChaining {
       let current = linkedList.getHead();
       while (current != null) {
         if (current.element.key === key) {
-          linkedList.remove(current.element);
-          if (linkedList.isEmpty()) {
-            delete this.table[position];
-          }
-          return true;
+          return current.element.value;
         }
         current = current.next;
       }
     }
-    return false;
+    return undefined;
   }
 }
