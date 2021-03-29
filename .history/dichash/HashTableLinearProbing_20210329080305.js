@@ -48,20 +48,9 @@ module.exports = class HashTableLinearProbing {
     if (this.table[position] != null) {
       if (this.table[position].key === key) {
         delete this.table[position];
-        this.verifyRemoveSideEffect(key, position);
-        return true;
-      }
-      let index = position + 1;
-      while (this.table[index] != null && this.table[index].key !== key) {
-        index++;
-      }
-      if (this.table[index] != null && this.table[index].key === key) {
-        delete this.table[index];
-        this.verifyRemoveSideEffect(key, index);
-        return true;
+        this.
       }
     }
-    return false;
   }
 
   //验证删除操作是否有副作用
@@ -70,11 +59,8 @@ module.exports = class HashTableLinearProbing {
     let index = removedPosition + 1;
     while (this.table[index] != null) {
       const posHash = this.hashCode(this.table[index].key);
-      if (posHash <= hash || posHash <= removedPosition) {
-        this.table[removedPosition] = this.table[index];
-        removedPosition = index;
-      }
-      index++;
     }
   }
+
+
 }

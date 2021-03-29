@@ -51,15 +51,6 @@ module.exports = class HashTableLinearProbing {
         this.verifyRemoveSideEffect(key, position);
         return true;
       }
-      let index = position + 1;
-      while (this.table[index] != null && this.table[index].key !== key) {
-        index++;
-      }
-      if (this.table[index] != null && this.table[index].key === key) {
-        delete this.table[index];
-        this.verifyRemoveSideEffect(key, index);
-        return true;
-      }
     }
     return false;
   }
