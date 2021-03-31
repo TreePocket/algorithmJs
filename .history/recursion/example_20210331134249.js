@@ -52,5 +52,5 @@ function fibonacciMemoization(n) {
   };
   return fibonacci(n);
 }
-// let res = fibonacciMemoization(5)
-// console.log(res);
+let res = fibonacciMemoization(5)
+console.log(res);

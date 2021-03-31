@@ -48,9 +48,10 @@ function fibonacciMemoization(n) {
   const memo = [0, 1];
   const fibonacci = (n) => {
     if (memo[n] != null) return memo[n];
-    return memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
+    memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
+    return memo[n];
   };
-  return fibonacci(n);
+  return fibonacci;
 }
-// let res = fibonacciMemoization(5)
-// console.log(res);
+let res = fibonacciMemoization(4)
+console.log(res);

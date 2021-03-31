@@ -40,17 +40,5 @@ function fibonacciIterative(n) {
 function fibonacci(n) {
   if (n == 0) return 0;
   if (n == 1) return 1;
-  return fibonacci(n - 1) + fibonacci(n - 2);
+  return fibonacci(n - 1) + fibonacci(n - 2)
 }
-
-//记忆化是一种保存前一个结果的值的优化技术，类似于缓存。 在分析计算fibonacci(5)时的调用发现fibonacci(3)被计算了两次，因此可以把fibonacci(3)存下来
-function fibonacciMemoization(n) {
-  const memo = [0, 1];
-  const fibonacci = (n) => {
-    if (memo[n] != null) return memo[n];
-    return memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
-  };
-  return fibonacci(n);
-}
-// let res = fibonacciMemoization(5)
-// console.log(res);
