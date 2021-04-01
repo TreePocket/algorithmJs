@@ -10,6 +10,6 @@ tree.insert(2);
 tree.insert(5);
 tree.insert(30);
 
-// console.log(tree);
+console.log(tree);
 const printNode = (value) => console.log(value);
 tree.inOrderTraverse(printNode);
